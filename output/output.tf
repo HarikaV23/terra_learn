@@ -5,10 +5,15 @@ data "aws_ami" "web" {
   
 }
 
+data "aws_instance" "web1" {
+    ami = "ami-0b4f379183e5706b9"
+}
+
+
 
 output "sample" {
     
-    value  = data.aws_ami.web.instance_type
+    value  = data.aws_instance.web1.instance_type
   
 }
 
