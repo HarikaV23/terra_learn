@@ -6,23 +6,23 @@ data "aws_ami" "web" {
 }
 
 resource "aws_instance" "web" {
-    #for_each = var.instances
-    count = length(var.instance)
+    for_each = var.instances
+    #count = length(var.instance)
     ami = data.aws_ami.web.image_id
-    #instance_type = each.value["type"]
-    instance_type = "t2.micro"
+    instance_type = each.value["type"]
+   # instance_type = "t2.micro"
     vpc_security_group_ids = ["sg-0f2cd6b7ac0f58e0e"]
     tags = {
-        #Name = each.value["name"]
-      Name = var.instance[count.index]
+        Name = each.value["name"]
+ #     Name = var.instance[count.index]
     }
   
 }
 
-variable "instance" {
-    default = ["frontend", "user","catalouge"]
+#variable "instance" {
+ #   default = ["frontend", "user","catalouge"]
   
-}
+#}
 
 
 
