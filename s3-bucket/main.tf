@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "bucket56789" {
       Environment = "Production"
     }
 }
-resource "aws_s3_bucket_acl" "ACL" {
+resource "aws_s3_bucket_acl" "example" {
   bucket = aws_s3_bucket.bucket56789.id
   acl    = "private"
 }
