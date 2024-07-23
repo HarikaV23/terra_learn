@@ -18,16 +18,16 @@ resource "aws_instance" "web" {
   
 }
 
-provider "aws" {
-  region = "eu-central-1"
+resource "aws_s3_bucket" "bucket" {
+  bucket  = "my_try"
+  tags    = {
+  Name           = "MyS3Bucket"
+  Environment    = "Production"
+  }
 }
-
-resource "aws_s3_bucket" "my_buk" {
-  bucket = "my-tf-test-bucket"
-  
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
+resource "aws_s3_bucket_versioning" "versioning" {
+  bucket = aws_s3_bucket.bucket.id
+  versioning_configuration {
+    status = "Enabled"
   }
 }
