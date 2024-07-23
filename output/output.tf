@@ -20,7 +20,7 @@ output "sample" {
 
 
 
-output "sample" {
+output "sample1" {
     
     value  = data.aws_ami.web.image_id
   
