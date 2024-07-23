@@ -1,12 +1,8 @@
 
-resource "aws_s3_bucket" "bucket56789" {
+resource "aws_s3_bucket" "b" {
   bucket = "bucket9033j2hs"
     tags = {
       Name        = "MyS3Bucket"
       Environment = "Production"
     }
-}
-resource "aws_s3_bucket_acl" "example" {
-  bucket = aws_s3_bucket.bucket56789.id
-  acl    = "private"
 }
