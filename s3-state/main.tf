@@ -21,6 +21,7 @@ resource "aws_instance" "web" {
 
 resource "aws_s3_bucket" "my_buk" {
   bucket = "my-tf-test-bucket"
+  region         = "us-east-1"
 
   tags = {
     Name        = "My bucket"
