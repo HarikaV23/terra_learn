@@ -7,6 +7,7 @@ data "aws_ami" "web" {
 
 
 output "sample" {
-    value  = data.aws_ami.web.image_id
+    
+    value  = data.aws_ami.web.instance_type
   
 }
