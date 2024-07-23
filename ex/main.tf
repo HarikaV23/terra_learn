@@ -13,8 +13,8 @@ resource "aws_instance" "web" {
     instance_type = "t2.micro"
     vpc_security_group_ids = ["sg-0f2cd6b7ac0f58e0e"]
     tags = {
-        Name = each.value["name"]
-      # Name = var.instance[count.index]
+        #Name = each.value["name"]
+      Name = var.instance[count.index]
     }
   
 }
