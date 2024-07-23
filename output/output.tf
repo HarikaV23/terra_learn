@@ -11,3 +11,12 @@ output "sample" {
     value  = data.aws_ami.web.instance_type
   
 }
+
+
+
+
+output "sample" {
+    
+    value  = data.aws_ami.web.image_id
+  
+}
